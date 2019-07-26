@@ -45,7 +45,7 @@
          
          d3.csv("data.csv", function(data) {
              
-            x.domain(data.max(function(d) { return d.year; }));
+            x.domain(d3.max(function(d) { return d.year; }));
             y.domain([0, d3.max(data, function(d) { return d.population; })]);
                      
             g.append("g")
