@@ -40,6 +40,12 @@
             .attr("transform", "translate(" + 100 + "," + 100 + ")");
 
          d3.csv("data.csv").then(function(data) {
+            
+            data.forEach(function(d) {
+   console.log(data[0]);
+  });
+            
+            
             console.log(data[0]);
          });
          
