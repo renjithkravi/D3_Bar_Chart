@@ -49,8 +49,8 @@
          
          d3.csv("data.csv").then(function(data) {
             
-            for (var i = 0; i < data.length; i++) {
-            d = data[i];
+          //  for (var i = 0; i < data.length; i++) {
+          //  d = data[i];
             x.domain(data.map(function(d) { return d.x; }));
             y.domain([0, d3.max(data, function(d) { return d.y; })]);
                      
@@ -94,7 +94,7 @@
                })
                   
             .attr("height", function(d) { return height - y(d.y); });
-            }
+        //    }
          });
          
       </script>
