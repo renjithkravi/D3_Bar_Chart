@@ -49,12 +49,11 @@
          
          d3.csv("data.csv", function(data) {
             
-            for (var i = 0; i < data.length; i++)
-            {
-                 x.domain(d3.max(function(data[i]) { return data[i].year; }));
-                 y.domain([0, d3.max(data[i], function(data[i]) { return data[i].population; })]);
-            }
-                   
+            for (var i = 0; i < data.length; i++) {
+            d = data[i];
+            x.domain(data.map(function(d) { return d.year; }));
+            y.domain([0, d3.max(data, function(d) { return d.population; })]);
+                     
             g.append("g")
                .attr("transform", "translate(0," + height + ")")
                .call(d3.axisBottom(x))
@@ -95,6 +94,7 @@
                })
                   
             .attr("height", function(d) { return height - y(d.population); });
+            }
          });
           
           
