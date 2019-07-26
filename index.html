@@ -34,7 +34,7 @@
             .text("Population bar chart")
             
          var x = d3.scaleBand().range([0, width]).padding(0.4),
-         y = d3.scaleLinear().range([42, 0]);
+         y = d3.scaleLinear().range([height, 0]);
             
          var g = svg.append("g")
             .attr("transform", "translate(" + 100 + "," + 100 + ")");
