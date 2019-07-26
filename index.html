@@ -23,7 +23,7 @@
       <svg width = "300" height = "300"></svg>
       <script>
          var svg = d3.select("svg"),
-         margin = 200, width = svg.attr("width") - margin,
+         margin = 100, width = svg.attr("width") - margin,
          height = svg.attr("height") - margin;
          
          svg.append("text")
@@ -52,7 +52,7 @@
           //  for (var i = 0; i < data.length; i++) {
           //  d = data[i];
             x.domain(data.map(function(d) { return d.x; }));
-            y.domain([0, d3.max(data, function(d) { return d.y; })]);
+            y.domain([0, 40]);
             
                      
             g.append("g")
