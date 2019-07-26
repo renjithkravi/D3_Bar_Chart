@@ -42,17 +42,17 @@
          d3.csv("data.csv").then(function(data) {            
             console.log(data);
             for (var i = 0; i < data.length; i++) {
-                     console.log(data[i].Name);
-                      console.log(data[i].Age);
+                     console.log(data[i].year);
+                      console.log(data[i].population);
             }
          });
          
-         d3.csv("data.csv", function(popu) {
+         d3.csv("data.csv", function(data) {
             
-            for (var i = 0; i < popu.length; i++)
+            for (var i = 0; i < data.length; i++)
             {
-//                 x.domain(d3.max(function(popu[i]) { return popu[i].year; }));
-//                   y.domain([0, d3.max(popu, function(popu[i]) { return popu[i].population; })]);
+                 x.domain(d3.max(function(data[i]) { return data[i].year; }));
+                 y.domain([0, d3.max(data[i], function(data[i]) { return data[i].population; })]);
             }
                    
             g.append("g")
@@ -80,7 +80,7 @@
                .call(d3.axisLeft(y))
 
             g.selectAll(".bar")
-               .data(popu)
+               .data(data)
                .enter()
                .append("rect")
                .attr("class", "bar")
