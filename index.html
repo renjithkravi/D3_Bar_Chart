@@ -43,11 +43,11 @@
             console.log(data);
          });
          
-         d3.csv("data.csv", function(data) {
+         d3.csv("data.csv", function(popu) {
             
-            data.forEach(function(d) {
+            popu.forEach(function(d) {
                 x.domain(d3.max(function(d) { return d.year; }));
-                  y.domain([0, d3.max(data, function(d) { return d.population; })]);
+                  y.domain([0, d3.max(popu, function(d) { return d.population; })]);
              });
              
             
@@ -77,7 +77,7 @@
                .call(d3.axisLeft(y))
 
             g.selectAll(".bar")
-               .data(data)
+               .data(popu)
                .enter()
                .append("rect")
                .attr("class", "bar")
