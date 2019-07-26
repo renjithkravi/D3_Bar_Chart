@@ -34,7 +34,7 @@
             .text("Population bar chart")
             
          var x = d3.scaleBand().range([0, width]).padding(0.4),
-         y = d3.scaleLinear().range([0, 42]);
+         y = d3.scaleLinear().range([0, 42]).padding(0.2);
             
          var g = svg.append("g")
             .attr("transform", "translate(" + 100 + "," + 100 + ")");
@@ -52,8 +52,8 @@
           //  for (var i = 0; i < data.length; i++) {
           //  d = data[i];
             x.domain(data.map(function(d) { return d.x; }));
-           // y.domain([0, d3.max(data, function(d) { return d.y; })]);
-            y.domain([0,42]);
+            y.domain([0, d3.max(data, function(d) { return d.y; })]);
+            
                      
             g.append("g")
                .attr("transform", "translate(0," + height + ")")
