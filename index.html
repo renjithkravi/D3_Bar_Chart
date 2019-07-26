@@ -45,13 +45,12 @@
          
          d3.csv("data.csv", function(popu) {
             
-            popu.forEach(function(d) {
-                x.domain(d3.max(function(d) { return d.year; }));
-                  y.domain([0, d3.max(popu, function(d) { return d.population; })]);
-             });
-             
-            
-                     
+            for (var i = 0; i < popu.length; i++)
+            {
+                x.domain(d3.max(function(popu[i]) { return popu[i].year; }));
+                  y.domain([0, d3.max(popu, function(popu[i]) { return popu[i].population; })]);
+            }
+                   
             g.append("g")
                .attr("transform", "translate(0," + height + ")")
                .call(d3.axisBottom(x))
