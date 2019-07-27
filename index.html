@@ -37,11 +37,11 @@
                .attr("transform", "translate(0, 0)")
                .call(d3.axisLeft(y))
 
-            g.selectAll(".rect")
+            g.selectAll(".bar")
                .data(data)
                .enter()
                .append("rect")
-               .attr("class", "bar") 
+               .attr("class", "rect") 
                .attr("x", function(d) { return x(d.x); })
                .attr("y", function(d) { return y(d.y); })
                .attr("width", x.bandwidth()).transition()
